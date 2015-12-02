@@ -1,0 +1,29 @@
+#!/bin/bash
+set TASK = "EX"
+
+rm EX.gra
+
+cat ./Grammars/date_time.gra >> ./EX.gra
+cat ./Grammars/number.gra >> ./EX.gra
+cat ./Grammars/next.gra >> ./EX.gra
+cat ./Grammars/anaph.gra >> ./EX.gra
+cat ./Grammars/anything.gra >> ./EX.gra
+cat ./Grammars/cost.gra >> ./EX.gra
+cat ./Grammars/existential.gra >> ./EX.gra
+cat ./Grammars/places.gra >> ./EX.gra
+cat ./Grammars/query.gra >> ./EX.gra
+cat ./Grammars/repair.gra >> ./EX.gra
+cat ./Grammars/response.gra >> ./EX.gra
+cat ./Grammars/social.gra >> ./EX.gra
+
+
+rm base.dic
+rm nets
+rm log
+rm EX.net
+echo "create list of nets"
+cat EX.gra | perl ./Scripts/mk_nets.perl > nets
+echo "compiling grammar"
+./compile_grammar -SymBufSize 200000 -f EX > log
+echo "flagging leaf nodes"
+#./concept_leaf -grammar EX.net
