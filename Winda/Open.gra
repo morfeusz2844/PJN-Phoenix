@@ -1,0 +1,13 @@
+
+[Open]
+	(*[intro] OPENACT *DOOR)
+	(OPENMUST *DOOR)
+OPENACT
+	(otworz)
+	(otworzyc)
+OPENMUST
+	(otwieraj)
+DOOR
+	(drzwi)
+	(wrota)
+;

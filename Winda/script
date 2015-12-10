@@ -1,0 +1,22 @@
+#!/bin/bash
+set TASK = "EX"
+
+rm Winda.gra
+
+cat ./Number.gra >> ./Winda.gra
+cat ./Level.gra >> ./Winda.gra
+cat ./Close.gra >> ./Winda.gra
+cat ./intro.gra >> ./Winda.gra
+cat ./Move.gra >> ./Winda.gra
+cat ./Open.gra >> ./Winda.gra
+
+rm base.dic
+rm nets
+rm log
+rm Winda.net
+echo "create list of nets"
+cat Winda.gra | perl ./Scripts/mk_nets.perl > nets
+echo "compiling grammar"
+./compile_grammar -SymBufSize 200000 -f Winda > log
+echo "flagging leaf nodes"
+./concept_leaf -grammar Winda.net

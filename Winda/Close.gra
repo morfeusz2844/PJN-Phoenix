@@ -1,0 +1,12 @@
+
+[Close]
+	(*[intro] CLOSEACT *DOOR)
+CLOSEACT
+	(zamknij)
+	(zamknac)
+CLOSEMUST
+	(zamykaj)
+DOOR
+	(drzwi)
+	(wrota)
+;

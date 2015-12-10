@@ -1,0 +1,14 @@
+
+[Move]
+	(*[intro] MOVEACT [level])
+	([intro] MOVEACT2 [level])
+MOVEACT
+	(wjedz na)
+	(zjedz do)
+	(jedz na)
+	(jedz do)
+	(zjedz do)
+MOVEACT2
+	(wjechac na)
+	(jechac na)
+;
